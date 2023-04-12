@@ -1,0 +1,9 @@
+sudo useradd <nameofuser>
+sudo passwd <nameofuser>
+sudo cat /etc/passwd
+sudo groupadd <nameofgroup>
+sudo cat /etc/group
+sudo gpasswd -a <username> <groupname>    // -a (for apend/single user) -M (for multipleuser)
+sudo gpasswd -M muskan,jack family // -M (for member list so it's overwrite old user so add the user also which u added via -a )
+main gpasswd / gpasswd --help
+
