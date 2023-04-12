@@ -6,4 +6,42 @@ sudo cat /etc/group
 sudo gpasswd -a <username> <groupname>    // -a (for apend/single user) -M (for multipleuser)
 sudo gpasswd -M muskan,jack family // -M (for member list so it's overwrite old user so add the user also which u added via -a )
 main gpasswd / gpasswd --help
+////grep for find string  
+ grep -r qa /
+ grep -r devops /home/ubuntu 
+ grep -r TRACE log.txt > trace.txt
+ grep -i trace log.txt 
+//// find is more like a filter
+find . log*
+find /home/ubuntu log*
+ind /home/ubuntu/ -type f --name prod
+find /home -group muskan-devops
+find /home -group muskan-devops -type d --name muskan-devops*
+ //// awk is a combination of grep & find, it's work like a programming
+aws /INFO/ log.txt 
+awk '/INFO/ {print $1,$4}' log.txt 
+awk '/INFO/ {print NR,$1,$4}' log.txt 
+awk ' NR>20 && NR<45 && /INFO/ {print $1,$4}' log.txt 
+awk ' NR>20 && NR<45 && /INFO/ {print NR, $1,$4}' log.txt 
+awk ' NR>20 && NR<45 && /INFO/ {print NR, $1,$4}' log.txt > qa.txt
+/////ACL(ACCESS CONTROL LIST) 
+->getfacl log.txt // same as ls -la log.txt
+# file: log.txt
+# owner: ubuntu
+# group: ubuntu
+user::rw-
+group::rw-
+other::r--
+->setfacl -m u:ubuntu:rwx log.txt 
+->getfacl log.txt 
+# file: log.txt
+# owner: ubuntu
+# group: ubuntu
+user::rw-
+user:ubuntu:rwx
+group::rw-
+mask::rwx
+other::r--
+////
 
+  
