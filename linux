@@ -6,6 +6,7 @@ sudo cat /etc/group
 sudo gpasswd -a <username> <groupname>    // -a (for apend/single user) -M (for multipleuser)
 sudo gpasswd -M muskan,jack family // -M (for member list so it's overwrite old user so add the user also which u added via -a )
 main gpasswd / gpasswd --help
+rm -r <nonemptydirectory>
 ////grep for find string  
  grep -r qa /
  grep -r devops /home/ubuntu 
